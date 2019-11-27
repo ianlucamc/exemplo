@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Projeto de Interfaces para Web - Tutorial Git</title>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilo próprio desse site -->
+    <link href="css/customizado.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <header>
+      <!-- Menu Fixo -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Tutorial Git</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Outros</a>
+            </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Pesquisar" aria-label="Pesquisar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Conteúdo do seu tutorial -->
+    <main role="main" class="container">
+      <h1 class="mt-4">Tutorial Git + GitHub</h1>
+      <p class="lead">O Git é um sistema de controle de versão de arquivos. Uma das aplicações desse recurso é o desenvolvimento
+        simultâneo de projetos, na qual diversos colaboradores podem editar e/ou criar arquivos
+        e permitir que suas alterações possam ser feitas sem sobrescrever conteúdos.</p>
+
+      <p class="lead">GitHub, por sua vez, é uma plataforma de hospedagem de código-fonte que permite que usuários cadastrados
+        na plataforma contribuam em projetos privados e/ou Open Source de qualquer lugar do mundo, ultilizando o Git para realizar o
+        controle de versão por meio das funcionalidades extras aplicadas. Este passo a passo, portanto, tem o intuito de te ajudar a
+        começar colocar em prática o uso dessas ferramentas.</p>
+        <!-- <p><b>Pontos de abordagem: </b><br>
+        - Como faz para utilizá-lo? <br>
+        - Demonstração prática <br>
+        - Demonstração teórica (passo a passo, videoaula, explicação de código, etc) <br>
+      </p> -->
+
+      <h2>1. Download Git</h2><hr>
+      <p class="lead">Faça o download do git, de acordo com seu sistema operacional, clicando <a href="https://git-scm.com/downloads" target="_blank">aqui</a>.</p><br>
+
+      <h2>2. Criando conta e repositório no GitHub</h2><hr>
+      <p class="lead">Para ultilizar o GitHub não é necessário fazer download, mas é preciso ter uma conta no serviço,
+        e caso ainda não tenha uma, acesse <a href="https://github.com/" target="_blank">github.com</a> para criá-la.
+        Após a criação, clique no botão 'New Repository' em verde para ser redirecionado a uma tela, como na imagem a seguir.</p>
+      <img src="images/github.PNG" alt="github" width="550" height="400">
+      <p class="lead">No exemplo, estamos criando um repositório de nome <code>exemplo</code>, de domínio público, e com o arquivo
+        <code>README.md</code> embutido, que conterá a descrição do projeto.</p>
+      <p class="lead">Agora que o repositório já está criado, ele estará diponível no endereço
+        <code>https://github.com/username/nomedorepositório</code>, em que <code>username</code> é o login definido por você no cadastro,
+        e <code>nomedorepositório</code>, definido na criação do mesmo. Ao acessar o url, tem-se a tela principal do seu projeto,
+         conforme a imagem abaixo.</p>
+      <img src="images/github_site.PNG" alt="github" width="550" height="450">
+      <p class="lead">Há muitas informações nessa tela, mas por enquanto vamos nos atentar ao botão 'Clone or download' em verde.
+        Esta URL gerada será usada para que possamos clonar o projeto na máquina desejada, e ao clicar no botão ao lado do endereço,
+        já teremos a URL na área de transferência.</p>
+
+      <h2>3. Clonando o projeto</h2><hr>
+      <p class="lead">Para abrir um terminal Git no Windows, basta clicar com o botão direito do mouse em um local de sua preferência
+        e escolher <code>Git Bash Here</code>. Em sistemas Mac/Linux, use o terminal/console, o git já estará disponível por lá.
+        No terminal, utilize o comando <code>git clone + urldorepositório</code> e tecle enter para clonar seu projeto, como no exemplo:
+        perceba que, ao fazer o git clone, é baixado em uma pasta com o nome e conteúdos do projeto.</p>
+      <img src="images/git.PNG" alt="git" width="550" height="450"><br>
+      <br>
+      <h2>Comandos Git</h2><hr>
+      <p class="lead">Com o repositório na sua máquina, vamos para os comandos iniciais:<br>
+      Crie algum arquivo teste na pasta do projeto para entendermos na prática os processos, e após isso, abra o terminal git na pasta e
+      execute o comando <code>git status</code>. A resposta será semelhante a essa:<br>
+      <img src="images/git_status.PNG" alt="git_status" width="550" height="450"><br>
+      Dentre as várias informações retornadas, o <code>Untracked files</code> indica que há alterações que não foram registradas no git.
+      Para preparar este arquivo para o versionamento, usamos o comando <code>git add</code>, como a seguir:<br>
+      <img src="images/git_add.PNG" alt="git_add" width="550" height="450"><br>
+      Agora que o arquivo criado já está no INDEX do repositório, o mesmo está pronto para o commit. Para commitar, configure o usuário que
+      registrará as alterações, com o comando <code>git config user.email "SEU ENDEREÇO DE EMAIL"</code>, e logo após, registre a nova versão
+       por meio do <code>git commit -m "MENSAGEM EXPLICANDO MUDANÇAS"</code>, desta forma:<br>
+      <img src="images/git_commit.PNG" alt="git_commit" width="550" height="450"><br>
+      Pronto, o arquivo já está no repositório local, isso é indicado pelo retorno do <code>git status</code> afirmando que já não há nada de
+      novo no projeto. Porém, essa mudança ainda não foi realizada no GitHub, isso por que as mudanças foram locais, e para publicá-las, usa-se
+      o comando <code>git push</code>, como no exemplo:<br>
+      <img src="images/git_push.PNG" alt="git_push" width="550" height="450"><br>
+      Agora podemos ver as mudanças realizadas no projeto disponíveis no site GitHub:<br>
+      <img src="images/github_atualizado.PNG" alt="github_atualizado" width="550" height="450"><br>
+      "E tá pronto o sorvetinho".
+      <br>
+      <h3>Resumo:</h3><hr>
+      - Para ver o status do projeto: <code>git status</code> <br>
+      - Para adicionar as mudanças feitas na nova versão: <code>git add *</code> <br>
+      - Para configurar o usuário que fará/registrará as alterações: <code>git config user.email "SEU ENDEREÇO DE EMAIL"</code> <br>
+      - Para registrar as mudanças (nova versão): <code>git commit -m "MENSAGEM EXPLICANDO MUDANÇAS"</code> <br>
+      - Para sincronizar com repositório remoto: <code>git push origin master</code> <br>
+      <br>
+
+      <!-- <h4>Bônus:</h4>
+      <b>Para apagar pastas no repositório: </b><br>
+      - Sincronizar com o repositório remoto: git pull origin master <br>
+      - Remover pasta localmente: git rm -r NOMEDAPASTA <br>
+      - Fazer commit das modificações: git commit -m "Remover pastas" <br>
+      - Sincronizar com repositório remoto: git push origin master<br>
+
+      - Modificar mensagem do commit mais recente: git commit --amend -->
+    </p>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Por Ian L M Camargo.</span>
+      </div>
+    </footer>
+
+  </body>
+</html>
